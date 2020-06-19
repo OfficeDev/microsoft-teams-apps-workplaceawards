@@ -1,0 +1,281 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AlreadyEndorsedMessage" xml:space="preserve">
+    <value>You have already endorsed **{0}** for this award.</value>
+    <comment>Message to be shown when user is already endorsed. {0}: Nominated team members..</comment>
+  </data>
+  <data name="AdminHeaderText" xml:space="preserve">
+    <value>Your new awards captain is...</value>
+    <comment>Header text to be shown in admin selection card.</comment>
+  </data>
+  <data name="AdminSubheaderText" xml:space="preserve">
+    <value>{0} - {1}</value>
+    <comment>Sub header text to be shown in admin selection  card. {0}: Name of the champion, {1}: Email id of champion.</comment>
+  </data>
+  <data name="ConfigureAdminTitle" xml:space="preserve">
+    <value>Set awards captain</value>
+    <comment>Title text to show in set champion task module.</comment>
+  </data>
+  <data name="ContentText" xml:space="preserve">
+    <value>Ready to get started? Select your awards captain</value>
+    <comment>Text to show in channel welcome card.</comment>
+  </data>
+  <data name="EndorseButtonText" xml:space="preserve">
+    <value>Endorse</value>
+    <comment>Title text to show in Endorse card.</comment>
+  </data>
+  <data name="EndorseTitle" xml:space="preserve">
+    <value>Endorse</value>
+    <comment>Title text to show in Endorse button.</comment>
+  </data>
+  <data name="ErrorMessage" xml:space="preserve">
+    <value>Something went wrong. Try again in a few minutes.</value>
+    <comment>Generic error message.</comment>
+  </data>
+  <data name="InvalidTeamText" xml:space="preserve">
+    <value>Bot cannot be used here because it has not been added for this team.</value>
+    <comment>Text to show when user tries to open bot from team where the bot  is not yet configured.</comment>
+  </data>
+  <data name="ManageAwardsBulletPoint" xml:space="preserve">
+    <value>* Allow nomination of your team mates for designated awards.</value>
+    <comment>Message to be shown in welcome card.</comment>
+  </data>
+  <data name="NominateBulletPoint" xml:space="preserve">
+    <value>* Approve and publish the award winners from the list of nominees.</value>
+    <comment>Message to be shown in welcome card.</comment>
+  </data>
+  <data name="NominateButton" xml:space="preserve">
+    <value>Nominate</value>
+    <comment>Text to be shown in nominate button.</comment>
+  </data>
+  <data name="NominateButtonText" xml:space="preserve">
+    <value>Nominate now</value>
+    <comment>Text to be shown in nominate now button.</comment>
+  </data>
+  <data name="NominatedByText" xml:space="preserve">
+    <value>Nominated by {0}.</value>
+    <comment>Text to be shown in Endorse card.</comment>
+  </data>
+  <data name="NominatePeopleTitle" xml:space="preserve">
+    <value>Nominate people</value>
+    <comment>Text to be shown in nominate card header.</comment>
+  </data>
+  <data name="NoteForTeamText" xml:space="preserve">
+    <value>**Note from team owner:** {0}</value>
+    <comment>Text to be shown in Admin card. {0} : Name of the team member who configured awards champion for team.</comment>
+  </data>
+  <data name="OkButtonText" xml:space="preserve">
+    <value>Ok</value>
+    <comment>Ok button text.</comment>
+  </data>
+  <data name="RewardCycleText" xml:space="preserve">
+    <value>Reward cycle:</value>
+    <comment>Text to show reward cycle date range in tab.</comment>
+  </data>
+  <data name="RewardTitle" xml:space="preserve">
+    <value>It's reward time!</value>
+    <comment>Header text to be shown in Reward adaptive card.</comment>
+  </data>
+  <data name="SetAdminBulletPoint" xml:space="preserve">
+    <value>* Set awards captain who can define awards and manage reward nomination cycles.</value>
+    <comment>Message to be shown in welcome card.</comment>
+  </data>
+  <data name="SetAdminButtonText" xml:space="preserve">
+    <value>Set awards captain</value>
+    <comment>Title text to show in set admin card.</comment>
+  </data>
+  <data name="SetRewardCycleBulletPoint" xml:space="preserve">
+    <value>* Show support for nominees by endorsing their nominations.</value>
+    <comment>Message to be shown in welcome card.</comment>
+  </data>
+  <data name="SuccessfulEndorseMessage" xml:space="preserve">
+    <value>You've successfully endorsed the nomination of **{0}** for the **{1}**. Results will be shared on **{2}.**</value>
+    <comment>Text to be shown in Endorse successful message. {0}: Nominees for that award. {1}: Award name. {2} reward cycle end date.</comment>
+  </data>
+  <data name="WelcomeCardTitle" xml:space="preserve">
+    <value>Welcome!</value>
+    <comment>Text to show in welcome card.</comment>
+  </data>
+  <data name="WelcomeSubHeaderText" xml:space="preserve">
+    <value>Here are some of the things that I can help you do:</value>
+    <comment>Text to show as a sub header in welcome card.</comment>
+  </data>
+  <data name="WelcomeTeamCardContent" xml:space="preserve">
+    <value>Hello, I am Workplace Awards bot and I can help you nominate your team members for performance awards.</value>
+    <comment>Text to show bot description in welcome card.</comment>
+  </data>
+  <data name="AwardWinnerCardTitle" xml:space="preserve">
+    <value>And the winners are…</value>
+    <comment>Text to show in Winner Carousel card.</comment>
+  </data>
+  <data name="WinnerCardRewardCycleTitle" xml:space="preserve">
+    <value>For the reward cycle</value>
+    <comment>Text to be shown in Winner carousel card.</comment>
+  </data>
+  <data name="RewardCycleHeader" xml:space="preserve">
+    <value>Reward cycle has been configured from **{0}**  to **{1}**.</value>
+    <comment>Text to be shown in Nomination Carousel card after setting reward cycle. {0}: award cycle start date,  {1}: award cycle end date.</comment>
+  </data>
+  <data name="CycleValidationMessage" xml:space="preserve">
+    <value>We're not currently in an active award cycle. Wait until the next cycle to nominate or endorse a teammate.</value>
+    <comment>Validation message to be shown if user tries to nominate or endorse without active reward cycle.</comment>
+  </data>
+  <data name="SetAdminMentionText" xml:space="preserve">
+    <value>As awards captain, {0} will define the awards, set the awards cycle, and share the results. Thanks so much! - {1}.</value>
+    <comment>Mention text when new admin is configured. {0} awards captain name. {1} Name of the team member who configured awards champion for team.</comment>
+  </data>
+  <data name="UnsupportedBotCommand" xml:space="preserve">
+    <value>I don't know that command. Try typing command:
+-Nominate</value>
+    <comment>Message to be shown in channel when user types any unsupported bot command.</comment>
+  </data>
+  <data name="AdminTabNavigationText" xml:space="preserve">
+    <value>Visit Workplace Awards tab to setup and manage reward cycles.</value>
+    <comment>Action button title text to navigate user to Tab.</comment>
+  </data>
+  <data name="CycleClosedMessage" xml:space="preserve">
+    <value>This reward cycle is closed.</value>
+    <comment>Validation message to be shown if user tries to nominate or endorse without active reward cycle or after publishing the winners for that cycle</comment>
+  </data>
+  <data name="NominationMentionText" xml:space="preserve">
+    <value>{0} has been nominated for this award. Feel free to endorse them! Thanks so much! - {1} .</value>
+    <comment>Mention text when new nomination submited. {0} Nominees for that award, {1} Nominator.</comment>
+  </data>
+  <data name="WinnerMentionText" xml:space="preserve">
+    <value>Congratulations </value>
+    <comment>Mention text when new winner published.</comment>
+  </data>
+  <data name="NominationReminderNotificationText" xml:space="preserve">
+    <value>Nominations are about to close, please nominate now.</value>
+    <comment>Text to show in nomination reminder notification card.</comment>
+  </data>
+  <data name="ViewWinnerTabText" xml:space="preserve">
+    <value>**View published results on Workplace Awards tab.**</value>
+    <comment>Text to show in winner card to navigate user to tab.</comment>
+  </data>
+  <data name="WelcomeCardNewAdminText" xml:space="preserve">
+    <value>**The existing awards captain has left the team. Please choose a new awards captain to proceed.**</value>
+    <comment>Welcome card text when existing admin left the team.</comment>
+  </data>
+  <data name="InvalidTenantText" xml:space="preserve">
+    <value>Unexpected tenant id found.</value>
+    <comment>Unexpected tenant id found.</comment>
+  </data>
+</root>

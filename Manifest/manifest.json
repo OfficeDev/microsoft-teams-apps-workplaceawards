@@ -1,0 +1,86 @@
+﻿{
+  "$schema": "https://developer.microsoft.com/en-us/json-schemas/teams/v1.5/MicrosoftTeams.schema.json",
+  "manifestVersion": "1.5",
+  "version": "1.0.0",
+  "id": "d3584887-d29c-4bfa-a14c-5066ae7c010a",
+  "packageName": "com.microsoft.teams.apptemplates.workplaceawards",
+  "developer": {
+    "name": "<<Developer name>>",
+    "websiteUrl": "<website url>",
+    "privacyUrl": "<privacy url>",
+    "termsOfUseUrl": "<terms of use url>"
+  },
+  "icons": {
+    "color": "color.png",
+    "outline": "outline.png"
+  },
+  "name": {
+    "short": "Workplace Awards"
+  },
+  "description": {
+    "short": "Workplace Awards provides an easy and intuitive method to reward employees.",
+    "full": "Workplace Awards provides an easy way for you to conduct your monthly, quarterly rewards and recognition process. Now you can easily nominate your colleague for designated awards, appreciate them for a job well done and celebrate success of your team anytime and from anywhere."
+  },
+  "accentColor": "#00B764",
+  "bots": [
+    {
+      "botId": "",
+      "scopes": [
+        "team"
+      ],
+      "supportsFiles": false,
+      "isNotificationOnly": false
+    }
+  ],
+  "configurableTabs": [
+    {
+      "configurationUrl": "<appbaseurl>/config-tab",
+      "canUpdateConfiguration": true,
+      "scopes": [
+        "team"
+      ]
+    }
+  ],
+  "composeExtensions": [
+    {
+      "botId": "<<botId>>",
+      "canUpdateConfiguration": false,
+      "commands": [
+        {
+          "id": "Nominate",
+          "title": "Nominations",
+          "description": "Search nominations",
+          "parameters": [
+            {
+              "name": "searchText",
+              "title": "Search",
+              "description": "Search"
+            }
+          ],
+          "context": [
+            "compose"
+          ],
+          "initialRun": true
+        },
+        {
+          "id": "Nominate awards",
+          "type": "action",
+          "title": "Nominate",
+          "description": "Nominate an award for a team member",
+          "initialRun": true,
+          "fetchTask": true,
+          "context": [
+            "compose"
+          ]
+        }
+      ]
+    }
+  ],
+  "validDomains": [
+    "<<appDomain>>"
+  ],
+  "webApplicationInfo": {
+    "id": "<Application client id>",
+    "resource": "<Application URI>"
+  }
+}
