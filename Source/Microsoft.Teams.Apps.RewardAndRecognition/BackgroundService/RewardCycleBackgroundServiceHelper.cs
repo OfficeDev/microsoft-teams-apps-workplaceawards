@@ -155,7 +155,7 @@ namespace Microsoft.Teams.Apps.RewardAndRecognition.BackgroundService
         }
 
         /// <summary>
-        /// Creates new reward cycle entity.
+        /// Update reward cycle entity properties based on recurrence settings.
         /// </summary>
         /// <param name="currentCycle">Current reward cycle for team.</param>
         /// <returns>Returns new reward cycle entity.</returns>
