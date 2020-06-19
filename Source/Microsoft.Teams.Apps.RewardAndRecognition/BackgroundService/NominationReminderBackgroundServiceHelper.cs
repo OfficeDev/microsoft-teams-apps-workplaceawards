@@ -131,9 +131,9 @@ namespace Microsoft.Teams.Apps.RewardAndRecognition.BackgroundService
                         await this.SendCardToTeamAsync(currentCycle);
                     }
                 }
-#pragma warning disable CA1031 // Catching general exceptions that might arise while sending reminder notification to avoid blocking next execution.
+#pragma warning disable CA1031 // Catching general exceptions to unblock iteration for sending reminder notifications to next team.
                 catch (Exception ex)
-#pragma warning restore CA1031 // Catching general exceptions that might arise while sending reminder notification to avoid blocking next execution.
+#pragma warning restore CA1031 // Catching general exceptions to unblock iteration for sending reminder notifications to next team.
                 {
                     this.logger.LogError(ex, $"Error occurred while sending reminder notification for team: {currentCycle.TeamId}.");
                 }
@@ -151,60 +151,51 @@ namespace Microsoft.Teams.Apps.RewardAndRecognition.BackgroundService
         {
             rewardCycleEntity = rewardCycleEntity ?? throw new ArgumentNullException(nameof(rewardCycleEntity));
 
-            try
+            var awardsList = await this.awardsStorageProvider.GetAwardsAsync(rewardCycleEntity.TeamId);
+            var valuesFromTaskModule = new TaskModuleResponseDetails()
             {
-                var awardsList = await this.awardsStorageProvider.GetAwardsAsync(rewardCycleEntity.TeamId);
-                var valuesFromTaskModule = new TaskModuleResponseDetails()
+                RewardCycleStartDate = rewardCycleEntity.RewardCycleStartDate,
+                RewardCycleEndDate = rewardCycleEntity.RewardCycleEndDate,
+                RewardCycleId = rewardCycleEntity.CycleId,
+            };
+
+            var teamDetails = await this.teamStorageProvider.GetTeamDetailAsync(rewardCycleEntity.TeamId);
+            string serviceUrl = teamDetails.ServiceUrl;
+
+            MicrosoftAppCredentials.TrustServiceUrl(serviceUrl);
+            string teamGeneralChannelId = rewardCycleEntity.TeamId;
+
+            this.logger.LogInformation($"sending notification to channel id - {teamGeneralChannelId}");
+
+            await retryPolicy.ExecuteAsync(async () =>
+            {
+                try
                 {
-                    RewardCycleStartDate = rewardCycleEntity.RewardCycleStartDate,
-                    RewardCycleEndDate = rewardCycleEntity.RewardCycleEndDate,
-                    RewardCycleId = rewardCycleEntity.CycleId,
-                };
-
-                var teamDetails = await this.teamStorageProvider.GetTeamDetailAsync(rewardCycleEntity.TeamId);
-                string serviceUrl = teamDetails.ServiceUrl;
-
-                MicrosoftAppCredentials.TrustServiceUrl(serviceUrl);
-                string teamGeneralChannelId = rewardCycleEntity.TeamId;
-
-                this.logger.LogInformation($"sending notification to channel id - {teamGeneralChannelId}");
-
-                await retryPolicy.ExecuteAsync(async () =>
-                {
-                    try
+                    var conversationParameters = new ConversationParameters()
                     {
-                        var conversationParameters = new ConversationParameters()
+                        ChannelData = new TeamsChannelData() { Channel = new ChannelInfo() { Id = rewardCycleEntity.TeamId } },
+                        Activity = (Activity)MessageFactory.Carousel(NominateCarouselCard.GetAwardNominationCards(this.options.Value.AppBaseUri, awardsList, this.localizer, valuesFromTaskModule)),
+                    };
+
+                    Activity mentionActivity = MessageFactory.Text(this.localizer.GetString("NominationReminderNotificationText"));
+
+                    await ((BotFrameworkAdapter)this.adapter).CreateConversationAsync(
+                        Constants.TeamsBotFrameworkChannelId,
+                        serviceUrl,
+                        this.microsoftAppCredentials,
+                        conversationParameters,
+                        async (conversationTurnContext, conversationCancellationToken) =>
                         {
-                            ChannelData = new TeamsChannelData() { Channel = new ChannelInfo() { Id = rewardCycleEntity.TeamId } },
-                            Activity = (Activity)MessageFactory.Carousel(NominateCarouselCard.GetAwardNominationCards(this.options.Value.AppBaseUri, awardsList, this.localizer, valuesFromTaskModule)),
-                        };
-
-                        Activity mentionActivity = MessageFactory.Text(this.localizer.GetString("NominationReminderNotificationText"));
-
-                        await ((BotFrameworkAdapter)this.adapter).CreateConversationAsync(
-                            Constants.TeamsBotFrameworkChannelId,
-                            serviceUrl,
-                            this.microsoftAppCredentials,
-                            conversationParameters,
-                            async (conversationTurnContext, conversationCancellationToken) =>
-                            {
-                                await conversationTurnContext.SendActivityAsync(mentionActivity, conversationCancellationToken);
-                            },
-                            default);
-                    }
-                    catch (Exception ex)
-                    {
-                        this.logger.LogError(ex, "Error while sending mention card notification to channel.");
-                        throw;
-                    }
-                });
-            }
-#pragma warning disable CA1031 // Catching general exceptions to log exception details in telemetry client.
-            catch (Exception ex)
-#pragma warning restore CA1031 // Catching general exceptions to log exception details in telemetry client.
-            {
-                this.logger.LogError(ex, "Error while sending notification to channel from background service.");
-            }
+                            await conversationTurnContext.SendActivityAsync(mentionActivity, conversationCancellationToken);
+                        },
+                        default);
+                }
+                catch (Exception ex)
+                {
+                    this.logger.LogError(ex, "Error while sending mention card notification to channel.");
+                    throw;
+                }
+            });
         }
     }
 }

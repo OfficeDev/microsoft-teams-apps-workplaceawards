@@ -58,9 +58,9 @@ namespace Microsoft.Teams.Apps.RewardAndRecognition.BackgroundService
                     await this.rewardCycleStorageProvider.StoreOrUpdateRewardCycleAsync(newCycle);
                     this.logger.LogInformation($"Reward cycle set to {(RewardCycleState)newCycle.RewardCycleState} TeamId: {newCycle.TeamId}");
                 }
-#pragma warning disable CA1031 // Catching general exceptions to log exception details in telemetry client.
+#pragma warning disable CA1031 // Catching general exceptions to unblock updating reward cycle for next reward cycle iteration.
                 catch (Exception ex)
-#pragma warning restore CA1031 // Catching general exceptions to log exception details in telemetry client.
+#pragma warning restore CA1031 // Catching general exceptions to unblock updating reward cycle for next reward cycle iteration.
                 {
                     this.logger.LogError(ex, $"Error occurred while updating reward cycle state for team: {currentCycle.TeamId}.");
                 }
@@ -170,7 +170,6 @@ namespace Microsoft.Teams.Apps.RewardAndRecognition.BackgroundService
             currentCycle.RewardCycleEndDate = DateTime.UtcNow.AddDays(cycleDurationInDays);
             currentCycle.RewardCycleStartDate = DateTime.UtcNow;
             currentCycle.RewardCycleState = (int)RewardCycleState.Active;
-            currentCycle.RowKey = guidValue;
 
             return currentCycle;
         }
