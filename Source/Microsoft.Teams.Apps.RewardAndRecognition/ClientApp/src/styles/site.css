@@ -1,0 +1,562 @@
+﻿/*
+    <copyright file="style.css" company="Microsoft">
+    Copyright (c) Microsoft. All rights reserved.
+    </copyright>
+*/
+
+.container-div {
+    height: 96vh;
+    padding-left: 3.5rem;
+    padding-right: 2.5rem;
+    width: 100vw;
+    position: fixed;
+}
+
+.container-subdiv-main {
+    height: 70vh;
+    width: auto;    
+}
+
+.preview-button {
+    margin-right: 2rem;
+}
+
+.table-cell-content {
+    background-color: rgba(0,0,0,0.15);
+    border-radius: 0.5rem;
+    border-radius: 0.5rem;
+    margin-top: 0rem;
+}
+
+.award-header {
+    font-size: 18px !important;
+}
+
+
+.footer {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    width: auto;
+    padding-bottom: 1.5rem;
+    padding-left: 2.5rem;
+    padding-right: 5rem;
+    align-content: flex-end;
+}
+
+.error {
+    position: fixed;
+    bottom: 3.2rem;
+    width: auto;
+    padding-bottom: 1.5rem;
+    padding-right: 5rem;
+    align-content: flex-end;
+}
+
+.title {
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+}
+
+.margin-button {
+    margin-left: 3.5rem
+}
+
+.list-title {
+    margin-bottom: 1rem;
+    margin-top: 2rem;
+}
+
+.list-width {
+    width: 38rem
+}
+
+.small-margin-left {
+    margin-left: 1rem
+}
+
+.error-container {
+    padding-top: 30vh
+}
+
+.div-shadow {
+    margin-left: 8rem !important;
+    margin-right: 8rem !important;
+    margin-bottom: 3rem !important;
+    margin-top: 3rem !important;
+    border: 1px solid #E2E2E2;
+    box-shadow: 0 0 2rem 0 rgba(0,0,0,0.15);
+    border-radius: 0.5rem;
+    border-radius: 0.5rem;
+    height: auto;
+    width: auto;
+}
+
+div-shadow-nomination {
+    margin-left: 5rem !important;
+    margin-right: 5rem !important;
+    margin-bottom: 5rem !important;
+    margin-top: 2rem !important;
+}
+
+.image-size-alignment {
+    width: 11rem !important;
+    height: 11rem !important;
+}
+
+.word-break {
+    word-break: break-word;
+}
+
+.nominee-margin {
+    margin-top: 2rem;
+}
+
+.header-nomination {
+    margin-top: 2rem;
+}
+/* Publish award*/
+.page-container {
+    width: 100%;
+    height: 99vh;
+    padding: 1rem;
+}
+
+.publish-table-container {
+    height: 98vh;
+    width: inherit;
+    overflow: auto;
+}
+
+.publish-award-header-page {
+    margin-right: 2.4rem;
+    width: auto;
+}
+
+.publish-award-footer-page {
+    width: auto;
+}
+
+.publish-award-table-header {
+    width: 100% !important;
+}
+
+.publish-award-awardcycle-header {
+    margin-bottom: auto;
+}
+
+.publish-award-button {
+    margin-right: 5px;
+}
+
+.publish-award-chat-button {
+    align-content: center;
+    align-self: end;
+}
+/*Manage award*/
+.loader {
+    width: 100%;
+    margin: 21rem auto;
+}
+
+.manage-awards-wrapper-page {
+    margin-left: 3.2rem;
+    margin-top: 1rem;
+    margin-right: 2.4rem;
+}
+
+.commandbar-wrapper {
+    background-color: #fbfbfb;
+    margin-top: 0.7rem;
+    padding: 4px 2px 4px 2px;
+}
+
+.add-new-button {
+    min-width: 105px !important;
+    margin: 0;
+    padding-left: 0 !important;
+}
+
+.edit-button {
+    margin: 0;
+    min-width: 73px !important;
+    padding-left: 0 !important;
+}
+
+.delete-button {
+    margin: 0;
+    min-width: 90px !important;
+    padding-left: 0 !important;
+}
+
+.search-input-container {
+    margin-left: 98px;
+    width: 374px;
+}
+
+.search-input-container-company-responses {
+    margin-left: 230px;
+    width: 374px;
+}
+
+.search-input-container-company-responses-withoutBtn {
+    margin-left: 349px;
+    width: 374px;
+}
+
+.add-user-responses-page {
+    margin-left: 3rem;
+    margin-top: 1rem;
+    margin-right: 3rem;
+}
+
+.add-form-container {
+    margin-right: 26rem;
+    margin-top: 2.5rem;
+}
+
+.add-form-input {
+    margin-top: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.add-form-button-container {
+    position: fixed;
+    width: 95%;
+    left: 1.2rem;
+    bottom: 2rem;
+}
+
+.reasonfornomination-text-area {
+    height: auto;
+    min-height: 10rem;
+}
+
+.awardedTo-dropdown-maxheight {
+    max-height: 5rem !important;
+}
+
+.response-text-area {
+    height: 10rem !important;
+}
+
+.max-error-message {
+    margin-left: 2.3rem;
+    margin-top: 1rem;
+}
+
+.form-label {
+    display: flex;
+}
+
+.field-error-message {
+    float: right;
+}
+
+.result-message-container {
+    align-content: center;
+    text-align: center;
+    width: 100vw;
+    margin-top: 20rem;
+}
+
+.result-message-icon {
+    align-content: center;
+    text-align: center;
+    margin-bottom: 0.5rem;
+}
+
+.result-success-message-text {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.result-error-message-text {
+    font-size: 1.5rem;
+    margin-left: 3.2rem;
+    font-weight: 600;
+}
+
+.response-message-text {
+    font-size: 1.6rem !important;
+}
+
+.result-message-icon svg {
+    width: 2.2rem;
+    height: 2.2rem;
+}
+
+.search-bar-margin {
+    width: 40rem;
+}
+
+.questions-field-info-message {
+    float: right;
+}
+
+.error-message {
+    text-align: center;
+    width: 80%;
+    height: 10rem;
+    position: absolute;
+    top: 4rem;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    font-size: 1.5rem;
+}
+
+.menu {
+    border-bottom: 0rem;
+    margin-bottom: 1rem;
+    margin-top: 0.5rem
+}
+
+.response-message-icon {
+    height: 2rem;
+    width: 2rem
+}
+
+.table-checkbox-cell {
+    max-width: 3rem;
+}
+
+.table-label-cell {
+    max-width: 10rem;
+}
+
+.darkContainer .commandbar-wrapper {
+    background-color: black;
+}
+
+.highContrastContainer .commandbar-wrapper {
+    background-color: black;
+}
+
+.page-footer {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    width: 100vw;
+    padding-bottom: 1.5rem;
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+}
+
+.tab-container {
+    height: 80vh;
+    width: auto;
+    overflow: auto;
+}
+
+.preview-container {
+    height: 79vh;
+    width: auto;
+    overflow: auto;
+    margin-left:2rem;
+    margin-right:2rem;
+}
+
+.container-div-preview {
+    height: 60vh;
+    width: auto;
+    overflow: auto;
+}
+
+.module-container {
+    margin-left: 2.67rem;
+    margin-top: 1rem;
+    margin-right: 2.67rem;
+}
+
+.tab-footer {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    width: 100vw;
+    height: 10vh;
+    padding-bottom: 1.5rem!important;
+    padding-left: 0.5rem;
+    padding-right: 2.6rem;
+    margin-bottom:1.3rem;
+}
+
+.margin-right-small {
+    margin-right: 2.6rem;
+}
+
+.table-image-cell {
+    max-width: 5rem;
+}
+
+.error-div-align {
+    position: relative;
+}
+
+.manage-award-icon {
+    max-width: 50px;
+    margin-right: 10px;
+}
+
+.result-container {
+    height: 55vh;
+    width: 50vw;
+    overflow: auto;
+}
+
+.winner-dialog {
+    height: 80vh;
+    width: 55vw !important;
+}
+
+.winner-publish-dialog {
+    height: 45vh;
+    width: 45vw !important;
+}
+
+
+.preview-image {
+    max-width: 70px;
+    margin-bottom: 10px;
+}
+
+.success-image {
+    max-width: 15px;
+    margin-bottom: 5px;
+}
+
+.award-image-icon {
+    height: 4rem !important;
+    width: 4rem !important;
+    padding: 0.5rem;
+}
+
+.publish-table-chat {
+    max-width: 132px !important;
+}
+
+.publish-table-nominee {
+    max-width: 35% !important;
+    cursor: pointer;
+}
+
+.publish-table-nominee-alluser {
+    max-width: 30% !important;
+    cursor: pointer;
+}
+
+.award-table-name {
+    max-width: 30% !important;
+}
+
+.award-table-description {
+    max-width: 70% !important;
+}
+
+.publish-table-reason {
+    max-width: 40% !important;
+    cursor: pointer;
+}
+
+.publish-table-reason-alluser {
+    max-width: 70% !important;
+    cursor: pointer;
+}
+
+.publish-table-endorse {
+    max-width: 10% !important;
+}
+
+.preview-image-icon {
+    height: 10rem !important;
+    width: 10rem !important;
+    padding: 0.5rem;
+}
+
+.margin-small-top {
+    margin-top: 0.5rem !important
+}
+
+.margin-medium-top {
+    margin-top: 1rem !important
+}
+
+.margin-large-right {
+    margin-right: 2rem !important
+}
+
+.publish-background {
+    background-color: #EDEBE9;
+}
+
+.darkContainer .publish-background {
+    background-color: #3B3A39;
+}
+
+.highContrastContainer .publish-background {
+    background-color: rgb(17, 17, 17);
+}
+
+.label-color {
+    background-color: #EDEBE9 !important;
+    color: black !important;
+}
+
+.label-margin {
+    margin-right: 0.2rem;    
+}
+
+.label-padding {
+    padding: 1.1rem!important;
+}
+
+.requiredfield {
+    margin-left: -0.5rem;
+}
+
+.award-cycle-header {
+    font-size: 18px !important;
+}
+
+.award-message-margin-top {
+    margin-top: 15px;
+    margin-left:5px;
+}
+.manage-award-tab-menu {
+    border-bottom:0;
+    margin-bottom:1rem;
+    margin-top:0.5rem;
+}
+.award-tab-item {
+    margin-left: 1rem;
+}
+
+.set-cycle-margin-top {
+    margin-top: 3rem;
+}
+.set-cycle-summary-margin-top {
+    margin-top: 2rem;
+}
+
+@media only screen and (max-width: 650px) {
+    .winner-dialog {
+        position: relative !important;
+        width: 85vw !important;
+        height: 85vh !important;
+        padding: 1rem !important;
+    }
+    .div-shadow {
+        position: relative !important;
+        margin-left: 4rem !important;
+        margin-right: 4rem !important;
+        margin-bottom: 3rem !important;
+        margin-top: 3rem !important;
+        border: 1px solid #E2E2E2;
+        box-shadow: 0 0 2rem 0 rgba(0,0,0,0.15);
+        border-radius: 0.5rem;
+        border-radius: 0.5rem;
+        height: auto !important;
+        width: 65vw !important;
+    }
+}
