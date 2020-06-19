@@ -3,51 +3,59 @@ page_type: sample
 languages:
 - csharp
 products:
-- dotnet
-description: "Add 150 character max description"
-urlFragment: "update-this-to-unique-url-stub"
+- office-teams
+description: Workplace Awards provides an easy and intuitive method to reward employees
+urlFragment: microsoft-teams-apps-workplaceawards
 ---
 
-# Official Microsoft Sample
+# Workplace Awards App Template
 
-<!-- 
-Guidelines on README format: https://review.docs.microsoft.com/help/onboard/admin/samples/concepts/readme-template?branch=master
+| [Documentation](https://github.com/OfficeDev/microsoft-teams-apps-workplaceawards/wiki/Home) | [Deployment guide](https://github.com/OfficeDev/microsoft-teams-apps-workplaceawards/wiki/Deployment-Guide) | [Architecture](https://github.com/OfficeDev/microsoft-teams-apps-workplaceawards/wiki/Solution-Overview) |
+| ---- | ---- | ---- |
 
-Guidance on onboarding samples to docs.microsoft.com/samples: https://review.docs.microsoft.com/help/onboard/admin/samples/process/onboarding?branch=master
+Organizations adopt employee recognition programs to raise employee morale; attract and retain key employees; elevate productivity; increase competitiveness, revenues and profitability; improve quality, safety and customer service; and reduce employee stress, absenteeism and turnover.
 
-Taxonomies for products and languages: https://review.docs.microsoft.com/new-hope/information-architecture/metadata/taxonomies?branch=master
--->
+### What is Workplace Awards App?
+Workplace Awards App provides a simple and intuitive way for any organization to setup and manage an employee Rewards & Recognition (R&R) program right within the Teams. It allows employees in a team to nominate their colleagues easily for awards and endorse such nominations to show their support. It provides the owner of the R&R process (aka R&R Captain) the ability to view submitted nominations and grant awards. In this way, the app provides a structure to the award nomination and approval process that is integral to any R&R program.
 
-Give a short description for your sample here. What does it do and why is it important?
+The app consciously encourages and fosters the culture of employee recognition in a modern workplace. 
 
-## Contents
+The app workflow is described below:
 
-Outline the file contents of the repository. It helps users navigate the codebase, build configuration and any related assets.
+ - Once the app is installed in a team, the app will prompt for users to select a team member as the R&R captain. The R&R captain will be responsible for creating the various awards available in the program, setting up a reward cycle and acts as deciding authority in the selection of award winners. 
+ - While creating awards in the system and setting up a reward cycle, the R&R captain has the option to configure the program as a one-time or a recurring reward cycle.
+ - The app will notify the team members to nominate team members for awards once a reward cycle starts.
+ - Team members will be able to endorse award nominations submitted within the Team. 
+ - The R&R captain will take the final call on deciding the award winners based on the organization's criteria and publish the list of winners in the team. To aid this selection process, the R&R captain will also have visibility into number of endorsements each nomination has received which in an indicator of support for the nomination from the team. 
 
-| File/folder       | Description                                |
-|-------------------|--------------------------------------------|
-| `src`             | Sample source code.                        |
-| `.gitignore`      | Define what to ignore at commit time.      |
-| `CHANGELOG.md`    | List of changes to the sample.             |
-| `CONTRIBUTING.md` | Guidelines for contributing to the sample. |
-| `README.md`       | This README file.                          |
-| `LICENSE`         | The license for the sample.                |
 
-## Prerequisites
 
-Outline the required components and tools that a user might need to have on their machine in order to run the sample. This can be anything from frameworks, SDKs, OS versions or IDE releases.
+![Reward cycle initiation](https://github.com/OfficeDev/microsoft-teams-apps-workplaceawards/wiki/Images/Nominate.png)
 
-## Setup
+![Nominate team members](https://github.com/OfficeDev/microsoft-teams-apps-workplaceawards/wiki/Images/Nominate-2.png)
 
-Explain how to prepare the sample once the user clones or downloads the repository. The section should outline every step necessary to install dependencies and set up any settings (for example, API keys and output folders).
+![Endorse award nominations](https://github.com/OfficeDev/microsoft-teams-apps-workplaceawards/wiki/Images/Endorse.png)
 
-## Running the sample
+![Tab for app captain](https://github.com/OfficeDev/microsoft-teams-apps-workplaceawards/wiki/Images/Champion_tab.png)
 
-Outline step-by-step instructions to execute the sample and see its output. Include steps for executing the sample from the IDE, starting specific services in the Azure portal or anything related to the overall launch of the code.
+## Legal notice
 
-## Key concepts
+This app template is provided under the [MIT License](https://github.com/OfficeDev/microsoft-teams-apps-workplaceawards/blob/master/LICENSE) terms.  In addition to these terms, by using this app template you agree to the following:
 
-Provide users with more context on the tools and services used in the sample. Explain some of the code that is being used and how services interact with each other.
+-	You are responsible for complying with all applicable privacy and security regulations related to use, collection and handling of any personal data by your app.  This includes complying with all internal privacy and security policies of your organization if your app is developed to be sideloaded internally within your organization.
+
+-	Where applicable, you may be responsible for data related incidents or data subject requests for data collect through your app.
+
+-	Any trademarks or registered trademarks of Microsoft in the United States and/or other countries and logos included in this repository are the property of Microsoft, and the license for this project does not grant you rights to use any Microsoft names, logos or trademarks outside of this repository.  Microsoft’s general trademark guidelines can be found [here](https://www.microsoft.com/en-us/legal/intellectualproperty/trademarks/usage/general.aspx).
+
+-	Use of this template does not guarantee acceptance of your app to the Teams app store.  To make this app available in the Teams app store, you will have to comply with the [submission and validation process](https://docs.microsoft.com/en-us/microsoftteams/platform/concepts/deploy-and-publish/appsource/publish), and all associated requirements such as including your own privacy statement and terms of use for your app.
+
+
+## Getting started
+
+Begin with the [Solution overview](https://github.com/OfficeDev/microsoft-teams-apps-workplaceawards/wiki/Solution-overview) to read about what the app does and how it works.
+
+When you're ready to try out Workplace Awards app, or to use it in your own organization, follow the steps in the [Deployment guide](https://github.com/OfficeDev/microsoft-teams-apps-workplaceawards/wiki/Deployment-guide).
 
 ## Contributing
 
