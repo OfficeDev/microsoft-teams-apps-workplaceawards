@@ -16,17 +16,17 @@ urlFragment: microsoft-teams-apps-workplaceawards
 Organizations adopt employee recognition programs to raise employee morale; attract and retain key employees; elevate productivity; increase competitiveness, revenues and profitability; improve quality, safety and customer service; and reduce employee stress, absenteeism and turnover.
 
 ### What is Workplace Awards App?
-Workplace Awards App provides a simple and intuitive way for any organization to setup and manage an employee Rewards & Recognition (R&R) program right within the Teams. It allows employees in a team to nominate their colleagues easily for awards and endorse such nominations to show their support. It provides the owner of the R&R process (aka R&R Captain) the ability to view submitted nominations and grant awards. In this way, the app provides a structure to the award nomination and approval process that is integral to any R&R program.
+Workplace Awards App provides a simple and intuitive way for any organization to set up and manage an employee Rewards & Recognition (R&R) program right within the Teams. It allows employees in a team to nominate their colleagues easily for awards and endorse such nominations to show their support. It provides the owner of the R&R process (aka R&R Captain) the ability to view submitted nominations and grant awards. In this way, the app provides a structure to the award nomination and approval process that is integral to any R&R program.
 
-The app consciously encourages and fosters the culture of employee recognition in a modern workplace. 
+The app consciously encourages and fosters the culture of employee recognition in a modern workplace.
 
 The app workflow is described below:
 
- - Once the app is installed in a team, the app will prompt for users to select a team member as the R&R captain. The R&R captain will be responsible for creating the various awards available in the program, setting up a reward cycle and acts as deciding authority in the selection of award winners. 
+- Once the app is installed in a team, the app will prompt users to select a team member as the R&R captain. The R&R captain will be responsible for creating the various awards available in the program, setting up a reward cycle, and acts as deciding authority in the selection of award winners. 
  - While creating awards in the system and setting up a reward cycle, the R&R captain has the option to configure the program as a one-time or a recurring reward cycle.
  - The app will notify the team members to nominate team members for awards once a reward cycle starts.
  - Team members will be able to endorse award nominations submitted within the Team. 
- - The R&R captain will take the final call on deciding the award winners based on the organization's criteria and publish the list of winners in the team. To aid this selection process, the R&R captain will also have visibility into number of endorsements each nomination has received which in an indicator of support for the nomination from the team. 
+ - The R&R captain will take the final call on deciding the award winners based on the organization's criteria and publish the list of winners in the team. To aid this selection process, the R&R captain will also have visibility into the number of endorsements each nomination has received which is an indicator of support for the nomination from the team.  
 
 
 
@@ -56,6 +56,9 @@ This app template is provided under the [MIT License](https://github.com/OfficeD
 Begin with the [Solution overview](https://github.com/OfficeDev/microsoft-teams-apps-workplaceawards/wiki/Solution-overview) to read about what the app does and how it works.
 
 When you're ready to try out Workplace Awards app, or to use it in your own organization, follow the steps in the [Deployment guide](https://github.com/OfficeDev/microsoft-teams-apps-workplaceawards/wiki/Deployment-guide).
+
+#### Known issue:
+The app is currently not supported on iOS devices. We are actively working on fixing the issue and will update the repo as soon as it is available
 
 ## Contributing
 
