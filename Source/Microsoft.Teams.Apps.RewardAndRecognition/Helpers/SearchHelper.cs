@@ -158,6 +158,7 @@ namespace Microsoft.Teams.Apps.RewardAndRecognition.Helpers
                                     Command = Constants.EndorseAction,
                                     NomineeUserPrincipalNames = nominatedDetail.NomineeUserPrincipalNames,
                                     AwardName = nominatedDetail.AwardName,
+                                    AwardId = nominatedDetail.AwardId,
                                     NomineeNames = nominatedDetail.NomineeNames,
                                     NomineeObjectIds = nominatedDetail.NomineeObjectIds,
                                     RewardCycleId = nominatedDetail.RewardCycleId,
@@ -169,7 +170,7 @@ namespace Microsoft.Teams.Apps.RewardAndRecognition.Helpers
                     ThumbnailCard previewCard = new ThumbnailCard
                     {
                         Title = nominatedDetail.NomineeNames,
-                        Subtitle = nominatedDetail.AwardName,
+                        Subtitle = $"<p style='font-weight: 600;'>{nominatedDetail.AwardName}</p>",
                     };
 
                     composeExtensionResult.Attachments.Add(new Attachment
