@@ -36,6 +36,11 @@ namespace Microsoft.Teams.Apps.RewardAndRecognition
         private const string ChannelConversationType = "channel";
 
         /// <summary>
+        /// Represents the conversation type as personal.
+        /// </summary>
+        private const string PersonalConversationType = "personal";
+
+        /// <summary>
         /// A set of key/value application configuration properties for Activity settings.
         /// </summary>
         private readonly IOptions<RewardAndRecognitionActivityHandlerOptions> options;
@@ -266,6 +271,11 @@ namespace Microsoft.Teams.Apps.RewardAndRecognition
         protected override async Task<MessagingExtensionActionResponse> OnTeamsMessagingExtensionFetchTaskAsync(ITurnContext<IInvokeActivity> turnContext, MessagingExtensionAction action, CancellationToken cancellationToken)
         {
             turnContext = turnContext ?? throw new ArgumentNullException(nameof(turnContext));
+
+            if (turnContext.Activity?.Conversation?.ConversationType == PersonalConversationType)
+            {
+                return CardHelper.GetTaskModuleErrorMessageCard(this.localizer);
+            }
 
             if (!await this.CheckTeamsValidationAsync(turnContext, cancellationToken))
             {
@@ -502,6 +512,18 @@ namespace Microsoft.Teams.Apps.RewardAndRecognition
             IInvokeActivity turnContextActivity = turnContext.Activity;
             try
             {
+                if (turnContextActivity != null && (turnContextActivity.Conversation?.ConversationType == null || turnContextActivity.Conversation?.ConversationType == PersonalConversationType))
+                {
+                    return new MessagingExtensionResponse
+                    {
+                        ComposeExtension = new MessagingExtensionResult
+                        {
+                            Text = this.localizer.GetString("MessagingExtensionErrorMessage"),
+                            Type = "message",
+                        },
+                    };
+                }
+
                 if (!await this.CheckTeamsValidationAsync(turnContext, cancellationToken))
                 {
                     return new MessagingExtensionResponse
@@ -517,7 +539,7 @@ namespace Microsoft.Teams.Apps.RewardAndRecognition
                 MessagingExtensionQuery messageExtensionQuery = JsonConvert.DeserializeObject<MessagingExtensionQuery>(turnContextActivity.Value.ToString());
                 string searchQuery = SearchHelper.GetSearchQueryString(messageExtensionQuery);
                 turnContextActivity.TryGetChannelData<TeamsChannelData>(out var teamsChannelData);
-                var cycleStatus = await this.rewardCycleStorageProvider.GetCurrentRewardCycleAsync(teamsChannelData.Channel.Id);
+                var cycleStatus = await this.rewardCycleStorageProvider.GetCurrentRewardCycleAsync(teamsChannelData.Team.Id);
 
                 if (cycleStatus != null)
                 {
@@ -527,7 +549,7 @@ namespace Microsoft.Teams.Apps.RewardAndRecognition
                             this.options.Value.AppBaseUri,
                             searchQuery,
                             cycleStatus.CycleId,
-                            teamsChannelData.Channel.Id,
+                            teamsChannelData.Team.Id,
                             messageExtensionQuery.QueryOptions.Count,
                             messageExtensionQuery.QueryOptions.Skip,
                             this.nominateDetailSearchService,
