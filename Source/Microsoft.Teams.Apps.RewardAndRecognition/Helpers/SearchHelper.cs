@@ -9,6 +9,7 @@ namespace Microsoft.Teams.Apps.RewardAndRecognition.Helpers
     using System.Globalization;
     using System.Linq;
     using System.Threading.Tasks;
+    using System.Web;
     using AdaptiveCards;
     using Microsoft.Bot.Schema;
     using Microsoft.Bot.Schema.Teams;
@@ -158,6 +159,7 @@ namespace Microsoft.Teams.Apps.RewardAndRecognition.Helpers
                                     Command = Constants.EndorseAction,
                                     NomineeUserPrincipalNames = nominatedDetail.NomineeUserPrincipalNames,
                                     AwardName = nominatedDetail.AwardName,
+                                    AwardId = nominatedDetail.AwardId,
                                     NomineeNames = nominatedDetail.NomineeNames,
                                     NomineeObjectIds = nominatedDetail.NomineeObjectIds,
                                     RewardCycleId = nominatedDetail.RewardCycleId,
@@ -168,8 +170,8 @@ namespace Microsoft.Teams.Apps.RewardAndRecognition.Helpers
 
                     ThumbnailCard previewCard = new ThumbnailCard
                     {
-                        Title = nominatedDetail.NomineeNames,
-                        Subtitle = nominatedDetail.AwardName,
+                        Title = HttpUtility.HtmlEncode(nominatedDetail.NomineeNames),
+                        Subtitle = $"<p style='font-weight: 600;'>{HttpUtility.HtmlEncode(nominatedDetail.AwardName)}</p>",
                     };
 
                     composeExtensionResult.Attachments.Add(new Attachment

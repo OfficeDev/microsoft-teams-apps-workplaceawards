@@ -196,6 +196,15 @@ namespace Microsoft.Teams.Apps.RewardAndRecognition {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to This app not available in 1:1 or group chats. To send an award, navigate to a team where Workplace Awards has been added..
+        /// </summary>
+        public static string MessagingExtensionErrorMessage {
+            get {
+                return ResourceManager.GetString("MessagingExtensionErrorMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to * Approve and publish the award winners from the list of nominees..
         /// </summary>
         public static string NominateBulletPoint {

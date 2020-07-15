@@ -278,4 +278,8 @@
     <value>Unexpected tenant id found.</value>
     <comment>Unexpected tenant id found.</comment>
   </data>
+  <data name="MessagingExtensionErrorMessage" xml:space="preserve">
+    <value>This app not available in 1:1 or group chats. To send an award, navigate to a team where Workplace Awards has been added.</value>
+    <comment>Message to be shown when bot invoked from 1:1 or group chat</comment>
+  </data>
 </root>

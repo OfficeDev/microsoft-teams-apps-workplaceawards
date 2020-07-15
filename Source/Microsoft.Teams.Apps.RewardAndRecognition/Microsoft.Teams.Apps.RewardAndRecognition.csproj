@@ -43,7 +43,7 @@
   </PropertyGroup>
   <ItemGroup>
     <AdditionalFiles Include="$([MSBuild]::GetDirectoryNameOfFileAbove($(MSBuildThisFileDirectory), .gitignore))\Build\stylecop.json" />
-  </ItemGroup>  
+  </ItemGroup>
   <ItemGroup>
     <Compile Update="Resources\Strings.Designer.cs">
       <DesignTime>True</DesignTime>

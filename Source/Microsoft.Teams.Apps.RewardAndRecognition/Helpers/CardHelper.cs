@@ -130,6 +130,28 @@ namespace Microsoft.Teams.Apps.RewardAndRecognition.Helpers
         }
 
         /// <summary>
+        /// Get task module response for error message when bot is invoked from 1:1 chat or group chat on messaging extension action response.
+        /// </summary>
+        /// <param name="localizer">The current cultures' string localizer.</param>
+        /// <returns>Returns task module response.</returns>
+        public static MessagingExtensionActionResponse GetTaskModuleErrorMessageCard(IStringLocalizer<Strings> localizer)
+        {
+            return new MessagingExtensionActionResponse
+            {
+                Task = new TaskModuleContinueResponse
+                {
+                    Value = new TaskModuleTaskInfo
+                    {
+                        Card = ValidationMessageCard.GetErrorAdaptiveCard(localizer.GetString("MessagingExtensionErrorMessage")),
+                        Height = ErrorMessageTaskModuleHeight,
+                        Width = ErrorMessageTaskModuleWidth,
+                        Title = localizer.GetString("NominatePeopleTitle"),
+                    },
+                },
+            };
+        }
+
+        /// <summary>
         /// Get task endorsement task module response.
         /// </summary>
         /// <param name="applicationBasePath">Represents the Application base Uri.</param>
