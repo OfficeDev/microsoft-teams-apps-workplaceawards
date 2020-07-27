@@ -24,14 +24,6 @@
         "description": "The client secret of the bot Azure AD app."
       }
     },
-    "appClientId": {
-      "type": "string",
-      "minLength": 36,
-      "maxLength": 36,
-      "metadata": {
-        "description": "The client ID of the app Azure AD app, e.g., 123e4567-e89b-12d3-a456-426655440000."
-      }
-    },
     "appDisplayName": {
       "type": "string",
       "minLength": 1,
@@ -296,7 +288,7 @@
             },
             {
               "name": "AzureAd:ClientId",
-              "value": "[parameters('appclientId')]"
+              "value": "[parameters('botClientId')]"
             },
             {
               "name": "AzureAd:ApplicationIdURI",
