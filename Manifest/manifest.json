@@ -24,7 +24,7 @@
   "accentColor": "#00B764",
   "bots": [
     {
-      "botId": "",
+      "botId": "<<botId>>",
       "scopes": [
         "team"
       ],
@@ -80,7 +80,7 @@
     "<<appDomain>>"
   ],
   "webApplicationInfo": {
-    "id": "<Application client id>",
-    "resource": "<Application URI>"
+    "id": "<<botId>>",
+    "resource": "api://<<applicationurl>>/<<botId>>"
   }
 }
