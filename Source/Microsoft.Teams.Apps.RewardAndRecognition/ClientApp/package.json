@@ -6,7 +6,7 @@
     "@fluentui/react-northstar": "0.47.1",
     "@microsoft/applicationinsights-react-js": "^2.3.1",
     "@microsoft/teams-js": "^1.5.2",
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "classnames": "^2.2.6",
     "i18next": "19.3.4",
     "i18next-xhr-backend": "3.2.2",
