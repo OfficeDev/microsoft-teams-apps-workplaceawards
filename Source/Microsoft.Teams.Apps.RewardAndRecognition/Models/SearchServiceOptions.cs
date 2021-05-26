@@ -23,5 +23,10 @@ namespace Microsoft.Teams.Apps.RewardAndRecognition.Models
         /// Gets or sets search service admin API key.
         /// </summary>
         public string SearchServiceAdminApiKey { get; set; }
+
+        /// <summary>
+        /// Gets or sets a value indicating whether deployment type is GCC Hybrid.
+        /// </summary>
+        public bool IsGCCHybridDeployment { get; set; }
     }
 }
