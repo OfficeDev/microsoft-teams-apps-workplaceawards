@@ -61,17 +61,20 @@ namespace Microsoft.Teams.Apps.RewardAndRecognition.Providers
             storageOptions = storageOptions ?? throw new ArgumentNullException(nameof(storageOptions));
 
             this.searchServiceOptions = searchServiceOptions.CurrentValue;
-            var searchDnsSuffix = this.searchServiceOptions.IsGCCHybridDeployment == true ? "search.azure.us" : "search.windows.net";
-            string searchServiceValue = this.searchServiceOptions.SearchServiceName;
+            var searchDnsSuffix = this.searchServiceOptions.IsGccHybridDeployment ? "search.azure.us" : "search.windows.net";
             this.searchServiceClient = new SearchServiceClient(
-                searchServiceValue,
-                new SearchCredentials(this.searchServiceOptions.SearchServiceAdminApiKey));
-            this.searchServiceClient.SearchDnsSuffix = searchDnsSuffix;
+                this.searchServiceOptions.SearchServiceName,
+                new SearchCredentials(this.searchServiceOptions.SearchServiceAdminApiKey))
+            {
+                SearchDnsSuffix = searchDnsSuffix,
+            };
             this.searchIndexClient = new SearchIndexClient(
-                searchServiceValue,
+                this.searchServiceOptions.SearchServiceName,
                 NominateDetailIndexName,
-                new SearchCredentials(this.searchServiceOptions.SearchServiceQueryApiKey));
-            this.searchIndexClient.SearchDnsSuffix = searchDnsSuffix;
+                new SearchCredentials(this.searchServiceOptions.SearchServiceQueryApiKey))
+            {
+                SearchDnsSuffix = searchDnsSuffix,
+            };
             this.nominateAwardStorageProvider = nominateAwardStorageProvider;
             this.initializeTask = new Lazy<Task>(() => this.InitializeAsync(storageOptions.CurrentValue.ConnectionString));
         }

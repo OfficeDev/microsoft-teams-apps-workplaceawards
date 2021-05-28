@@ -45,7 +45,7 @@ namespace Microsoft.Teams.Apps.RewardAndRecognition
                 options.SearchServiceName = configuration.GetValue<string>("Search:SearchServiceName");
                 options.SearchServiceQueryApiKey = configuration.GetValue<string>("Search:SearchServiceQueryApiKey");
                 options.SearchServiceAdminApiKey = configuration.GetValue<string>("Search:SearchServiceAdminApiKey");
-                options.IsGCCHybridDeployment = configuration.GetValue<bool>("DeploymentType:IsGCCHybrid");
+                options.IsGccHybridDeployment = configuration.GetValue<bool>("DeploymentType:IsGCCHybrid");
             });
             services.Configure<TelemetryOptions>(options =>
             {

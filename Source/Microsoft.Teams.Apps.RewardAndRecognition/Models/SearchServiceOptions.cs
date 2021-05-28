@@ -25,8 +25,8 @@ namespace Microsoft.Teams.Apps.RewardAndRecognition.Models
         public string SearchServiceAdminApiKey { get; set; }
 
         /// <summary>
-        /// Gets or sets a value indicating whether deployment type is GCC Hybrid.
+        /// Gets or sets a value indicating whether deployment is for GCC High tenant.
         /// </summary>
-        public bool IsGCCHybridDeployment { get; set; }
+        public bool IsGccHybridDeployment { get; set; }
     }
 }
