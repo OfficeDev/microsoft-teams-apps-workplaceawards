@@ -120,13 +120,6 @@
             "description":"The pricing tier for the Azure Search service."
          }
       },
-      "IsGCCHybrid":{
-         "type":"bool",
-         "defaultValue":"false",
-         "metadata":{
-            "description":"Deployment tenant is GCC or any other tenant."
-         }
-      },
       "gitRepoUrl":{
          "type":"string",
          "metadata":{
@@ -307,7 +300,7 @@
                   },
                   {
                      "name":"DeploymentType:IsGCCHybrid",
-                     "value":"[parameters('IsGCCHybrid')]"
+                     "value":false
                   }
                ],
                "cors":{

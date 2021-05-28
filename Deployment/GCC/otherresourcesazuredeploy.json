@@ -40,13 +40,6 @@
             "description":"The instrumentation key for the app insights created for the bot."
          }
       },
-      "IsGCCHybrid":{
-         "type":"bool",
-         "defaultValue":"false",
-         "metadata":{
-            "description":"Deployment tenant is GCC or any other tenant."
-         }
-      },
       "sku":{
          "type":"string",
          "allowedValues":[
@@ -275,7 +268,7 @@
                   },
                   {
                      "name":"DeploymentType:IsGCCHybrid",
-                     "value":"[parameters('IsGCCHybrid')]"
+                     "value":true
                   }
                ],
                "cors":{
